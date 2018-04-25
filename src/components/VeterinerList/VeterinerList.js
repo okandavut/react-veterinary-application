@@ -5,19 +5,22 @@ import "./VeterinerList.css";
 class VeterinerList extends Component {
   constructor(props) {
     super(props);
-    this.state = { veterinerler: [] };
+    this.state = { veterinerler: [] , vetInfo: "" };
+
   }
   componentDidMount() {
-    console.log(this.state.veterinerler);
   } 
+  handleClick = (item) => {
+    this.setState({vetInfo:item}); 
+    this.props.setVeterinerInfo(item);
+  }
   render() {
-    console.log(this.state);
     return (
-      <div className="list">
+      <div className="list" >
         <ul>
           {this.props.veterinerler.map(function(item, index) {
-            return <li key={index}>{item.name}</li>;
-          })}
+            return <li key={index} onClick={ () => this.handleClick(item)}>{item.name}</li>;
+          }.bind(this))}
         </ul>
       </div>
     );

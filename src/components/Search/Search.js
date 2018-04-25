@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery'; 
 import './Search.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Select from 'react-select';
@@ -33,9 +32,7 @@ class Search extends Component {
     }).then((jsonResult) => {
       // Do something with the result
       this.setState({veterinerler:jsonResult});
-      console.log(this.state.veterinerler);
       this.props.setVeterinerler(this.state.veterinerler);
-      
     })
   }
   fillCity(){

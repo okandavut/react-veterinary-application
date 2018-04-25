@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import Search from './components/Search/Search';
 import VeterinerList from './components/VeterinerList/VeterinerList';
+import VeterinerDetay from './components/VeterinerDetay/VeterinerDetay';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super();
-    this.state = { veterinerler : [] };
+    this.state = { veterinerler : []  , vetInfo : {}};
+    this.show = false;
   }
   componentDidMount() {
-    console.log(this.state.veterinerler);
   } 
   setVeterinerler(items){
-    this.setState({veterinerler:items});  }
+    this.setState({veterinerler:items}); 
+   }
+  setVeterinerInfo(vetInfo){
+    this.setState({vetInfo:vetInfo}); 
+    this.show = true;
+   }
   render() {
     return (
       <div className="App">
@@ -21,7 +27,9 @@ class App extends Component {
           <Search setVeterinerler={this.setVeterinerler.bind(this)}/>
          
         </header>
-        <VeterinerList veterinerler={this.state.veterinerler}/>
+        <VeterinerList veterinerler={this.state.veterinerler} setVeterinerInfo={this.setVeterinerInfo.bind(this)}/>
+        <br/>
+        {this.show && <VeterinerDetay vetInfo = {this.state.vetInfo} />}
       </div>
     );
   }

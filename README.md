@@ -1,10 +1,27 @@
 
-## React ile basit şehirlere göre veteriner listeleme ve bilgi alma uygulaması.
+## Veterinary listing and information retrieval application by cities with React.
 
-Readme uygulama geliştikçe değişecektir.
+The Readme will change as the application evolves.
 
-Şu anki görünüm: 
+New Editings : 
+Detail component was deleted.
+Modal component was created and detail info is shown in modal.
+
+Screenshoot : 
+
+
+![PageScreenshoot_1](https://image.ibb.co/eJqfin/reacct_veteriner_updated.png)
+
+
+
+--------------------------------------------------------------------
+Initial commit : 
+
+
 ![PageScreenshoot_1](https://image.ibb.co/gJKOKH/Ekran_Al_nt_s.png)
-Api olarak bu Github deposundan yararlanılmıştır. Sahibi olan kişinin bilgisi dahilinde kullanılmıştır.
+
+
+
+Veterinary API was used. Api was created by [@enderahmetyurt](https://github.com/enderahmetyurt) . Thank you for this API.
 
 https://github.com/enderahmetyurt/veterinary-list-api

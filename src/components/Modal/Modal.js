@@ -1,47 +1,48 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import VtMap from "../VtMap/VtMap";
+import { GoogleApiWrapper } from "google-maps-react";
+import PropTypes from "prop-types";
 
 class Modal extends React.Component {
   render() {
-    // Render nothing if the "show" prop is false
-    if(!this.props.show) {
+    if (!this.props.show) {
       return null;
     }
 
     // The gray background
     const backdropStyle = {
-      position: 'fixed',
+      position: "fixed",
       top: 0,
       bottom: 0,
       left: 0,
       right: 0,
-      backgroundColor: 'rgba(0,0,0,0.3)',
+      backgroundColor: "rgba(0,0,0,0.3)",
       padding: 50,
-      margin: '0 auto'
+      margin: "0 auto"
     };
 
     // The modal "window"
     const modalStyle = {
-      backgroundColor: '#fff',
+      backgroundColor: "#fff",
       borderRadius: 5,
       width: 500,
-      maxHeight: 400,
-      margin: '0 auto',
+      maxHeight: 700,
+      margin: "0 auto",
       padding: 30,
-      display: 'inline-block',
-      marginTop:130,
-      textAlign:'center'
+      display: "inline-block",
+      marginTop: 30,
+      textAlign: "center",
+      overflowScrool: "true"
     };
 
     return (
       <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
           {this.props.children}
-
           <div className="footer">
-            <button onClick={this.props.onClose}>
-              Close
-            </button>
+            <button onClick={this.props.onClose}>Close</button>
+            <VtMap google={this.props.google} />
+
           </div>
         </div>
       </div>
@@ -55,4 +56,6 @@ Modal.propTypes = {
   children: PropTypes.node
 };
 
-export default Modal;
+export default GoogleApiWrapper({
+  apiKey: "maps-api-key"
+})(Modal);

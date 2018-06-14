@@ -3,10 +3,19 @@
 
 The Readme will change as the application evolves.
 
+
+New Editings : 
+Google Maps was added.
+ 
+ Screenshoot:
+
+![PageScreenshoot_1](https://image.ibb.co/bGqxud/Screenshot_3.png)
+
+--------------------------------------------------------------------
+
 New Editings : 
 Detail component was deleted.
 Modal component was created and detail info is shown in modal.
-
 Screenshoot : 
 
 
